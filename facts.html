@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Факти</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main>
+
+      <div class="header">
+        <header>
+          <h1 class="title">Факти про космос</h1>
+        </header>
+      </div>
+      <nav class="navbar_menu">
+        <div class="container">
+          <div class="navbar_wrap">
+            <ul class="navbarmenu">
+              <li><a href="/">Головна</a></li>
+              <li>|</li>
+              <li><a href="/facts">Факти</a></li>
+              <li>|</li>
+              <li><a href="/info">Інформація</a></li>
+              <li>|</li>
+              <li><a href="/contacts">Контакти</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% for fact in fact_list %}
+      <div class="fact_list1">
+        <img src="{{ fact.img }}" alt="poster">
+        <div class="factt-details">
+          <h2 class="fact_nomber">{{ fact.title }}</h2>
+          <p class="fact_text">{{ fact.text }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+    <footer>
+      <p>© 2025 Всі права захищені</p>
+      <p>Всі факти були взяті з сайту: skyatnightmagazine.com/space-science/facts-about-astronomy-space</p>
+    </footer>
+  </body>
+</html>
